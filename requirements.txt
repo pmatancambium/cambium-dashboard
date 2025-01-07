@@ -1,0 +1,28 @@
+# Core dependencies
+python-docx
+PyMuPDF
+pymongo
+python-bidi
+arabic-reshaper
+
+# Chunking and embeddings
+chonkie[semantic]
+google-generativeai
+
+# Document processing
+pathlib
+pandas  # For CSV handling
+
+# Logging and utilities
+typing-extensions
+
+# Error handling
+google-api-core>=2.15.0  # For retry functionality
+
+
+python-dotenv
+streamlit
+
+plotly
+holidays
+python-dateutil

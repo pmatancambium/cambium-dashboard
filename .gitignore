@@ -1,0 +1,6 @@
+procedures_processing/
+procedures_data/
+__pycache__/
+.env
+.venv/
+.streamlit/
