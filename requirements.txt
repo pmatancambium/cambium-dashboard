@@ -8,6 +8,8 @@ arabic-reshaper
 # Chunking and embeddings
 chonkie[semantic]
 google-generativeai
+google-genai
+
 
 # Document processing
 pathlib
