@@ -1,30 +1,30 @@
 # Core dependencies
-python-docx
-PyMuPDF
-pymongo
-python-bidi
-arabic-reshaper
+python-docx==1.1.2
+PyMuPDF==1.25.4
+pymongo==4.11.2
+python-bidi==0.6.6
+arabic-reshaper==3.0.0
 
 # Chunking and embeddings
-chonkie[semantic]
-google-generativeai
-google-genai
+chonkie[semantic]==0.5.1
+google-generativeai==0.8.4
+google-genai==1.5.0
 
 
 # Document processing
-pathlib
-pandas  # For CSV handling
+pathlib==1.0.1
+pandas==2.2.3
 
 # Logging and utilities
-typing-extensions
+typing-extensions==4.12.2
 
 # Error handling
-google-api-core>=2.15.0  # For retry functionality
+google-api-core==2.24.2 #>=2.15.0  # For retry functionality
 
 
-python-dotenv
-streamlit
+python-dotenv==1.0.1
+streamlit==1.43.2
 
-plotly
-holidays
-python-dateutil
+plotly==6.0.0
+holidays==0.68
+python-dateutil==2.9.0.post0
