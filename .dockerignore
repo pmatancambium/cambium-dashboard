@@ -4,4 +4,8 @@
 Dockerfile
 .gitignore
 .dockerignore
+.streamlit
+.env
+procedures_processing/
+procedures_data/
 **/__pycache__/

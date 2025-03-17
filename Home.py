@@ -1,10 +1,13 @@
 import streamlit as st
+from utils.env import load_secrets
 from utils.ui_components import (
     setup_page_config,
     add_custom_css,
     init_session_state,
     authenticate,
 )
+
+load_secrets()
 
 
 def main():
