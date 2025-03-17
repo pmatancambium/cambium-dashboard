@@ -28,11 +28,6 @@ def setup_page_config():
     )
 
 
-def check_authentication() -> bool:
-    """Check if user is authenticated"""
-    return st.session_state.authenticated
-
-
 def add_custom_css():
     """Add custom CSS for RTL support and styling"""
     st.markdown(
@@ -111,6 +106,11 @@ def init_session_state():
         st.session_state.conversation_history = []
     if "show_examples" not in st.session_state:
         st.session_state.show_examples = True
+
+
+def check_authentication() -> bool:
+    """Check if user is authenticated"""
+    return st.session_state.authenticated
 
 
 def authenticate() -> bool:

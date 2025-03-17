@@ -5,12 +5,13 @@ from utils.ai_services import (
     process_gemini_response,
 )
 from utils.ui_components import (
+    authenticate,
     setup_page_config,
     add_custom_css,
     init_session_state,
     check_authentication,
     format_message,
-    redirect_page,
+    # redirect_page,
 )
 from utils.display_utils import display_chunk_content
 import streamlit as st
@@ -127,7 +128,9 @@ def main():
     # Enforce authentication
     if not check_authentication():
         st.warning("Please log in to access this page.")
-        redirect_page()
+        authenticate()
+        st.stop()
+        # redirect_page()
 
     st.title("📚 צ'אטבוט נהלי קמביום")
     collection = init_mongodb()
