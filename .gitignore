@@ -3,4 +3,4 @@ procedures_data/
 __pycache__/
 .env
 .venv/
-.streamlit/
+.streamlit/secrets.toml

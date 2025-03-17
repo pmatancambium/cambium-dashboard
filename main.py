@@ -1,26 +1,11 @@
 from utils.database import init_mongodb, find_similar_chunks
-from utils.ai_services import (
-    get_embedding,
-    get_gemini_response,
-    process_gemini_response,
-)
-from utils.ui_components import (
-    authenticate,
-    setup_page_config,
-    add_custom_css,
-    init_session_state,
-    check_authentication,
-    format_message,
-    # redirect_page,
-)
+from utils.ai_services import get_embedding, get_gemini_response, process_gemini_response
+from utils.env import load_secrets
+from utils.ui_components import authenticate, setup_page_config, add_custom_css, init_session_state, check_authentication, format_message
 from utils.display_utils import display_chunk_content
 import streamlit as st
 
-# from dotenv import load_dotenv
-import os
-
-# Load environment variables
-# load_dotenv()
+load_secrets()
 
 
 def process_query(question, collection):
@@ -28,7 +13,8 @@ def process_query(question, collection):
     # Ensure examples are hidden when processing any query
     st.session_state.show_examples = False
     # Add to conversation history
-    st.session_state.conversation_history.append({"role": "user", "content": question})
+    st.session_state.conversation_history.append(
+        {"role": "user", "content": question})
 
     # Show user message
     with st.chat_message("user"):
@@ -38,7 +24,8 @@ def process_query(question, collection):
     with st.chat_message("assistant"):
         with st.spinner("מחפש בנהלים..."):
             query_embedding = get_embedding(question)
-            similar_chunks = find_similar_chunks(collection, query_embedding, question)
+            similar_chunks = find_similar_chunks(
+                collection, query_embedding, question)
 
             if not similar_chunks:
                 response_text = "לא נמצא מידע רלוונטי בנהלים."
@@ -146,7 +133,8 @@ def main():
                 st.markdown(message["content"])
                 with st.expander("📚 מקורות"):
                     for source in message["sources"]:
-                        st.markdown(f"**{source['filename']}** (עמוד {source['page']})")
+                        st.markdown(
+                            f"**{source['filename']}** (עמוד {source['page']})")
                         st.markdown(source["content"])
             else:
                 st.markdown(message["content"])
