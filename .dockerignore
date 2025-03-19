@@ -4,8 +4,9 @@
 Dockerfile
 .gitignore
 .dockerignore
-.streamlit/secrets.toml
+.streamlit
 .env
 procedures_processing/
 procedures_data/
 **/__pycache__/
+deploy.sh

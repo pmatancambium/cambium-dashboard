@@ -39,7 +39,7 @@ def load_secrets():
     if loaded_from_toml:
         return
 
-    # Else, we'll try to load them from environment         - Development
+    # Else, we'll try to load them from environment         - AWS
     secrets = {key: os.environ.get(key) for key in KEYS}
     report_results(secrets)
     st.secrets = secrets

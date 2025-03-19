@@ -1,0 +1,8 @@
+services:
+  dashboard:
+    image: dashboard-management
+    ports:
+      - 8501:8501
+    env_file:
+      - .env
+    command: streamlit run main.py.streamlit/config.toml

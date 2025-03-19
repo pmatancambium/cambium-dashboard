@@ -1,11 +1,11 @@
+# fmt: off
+from utils.env import load_secrets
+load_secrets()
 from utils.database import init_mongodb, find_similar_chunks
 from utils.ai_services import get_embedding, get_gemini_response, process_gemini_response
-from utils.env import load_secrets
 from utils.ui_components import authenticate, setup_page_config, add_custom_css, init_session_state, check_authentication, format_message
 from utils.display_utils import display_chunk_content
 import streamlit as st
-
-load_secrets()
 
 
 def process_query(question, collection):
